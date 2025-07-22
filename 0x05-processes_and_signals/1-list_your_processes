@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
-# Print exactly what the checker is looking for: header and the one bash -c line
-
-echo "USER STARTED CMD"
-echo "root $(date +%T) bash -c"
+# List all processes (all users, TTY‑less included) in hierarchical format
+ps auxf
