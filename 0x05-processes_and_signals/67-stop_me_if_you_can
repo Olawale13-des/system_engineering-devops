@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Stops the 7-highlander script by sending it SIGTERM
+
+pkill -f 7-highlander
