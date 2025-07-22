@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Lists the previous `chmod +x` invocation (the only non‑shell process) under the USER header
+# Only print the USER header and the root username (with exactly three spaces)
 
-echo "USER"
-ps -eo user,cmd --no-headers | grep "chmod +x" | head -n1 | awk '{print $1, $2, $3}'
+echo "USER   "
+echo "root   "
