@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# Lists all running processes including TTY-less ones in a hierarchical format with correct headers
+# Lists all running processes in tree format with required headers
 
-ps -eo user,lstart,cmd --forest | awk 'NR==1{$2="STARTED"; $3=$4=$5=$6=""; $0=$1" "$2" "$7} NR>1{$2=$3=$4=$5=$6=""; $0=$1" "$7" "$8; print}' | column -t
+ps -eo user,lstart,cmd --forest | awk 'NR==1 {print "USER STARTED CMD"; next} {started=$3" "$4" "$5" "$6" "$7; cmd=""; for(i=8;i<=NF;++i) cmd=cmd" "$i; print $1, started, cmd}'
